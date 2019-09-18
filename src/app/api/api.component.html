@@ -52,8 +52,8 @@
     <tr  *ngFor="let w of w_data| paginate: { itemsPerPage: 10, currentPage: p } let i=index;"> 
        <th scope="row"  >{{i+1}}</th> 
        <th scope="row" >{{w.word}}</th> 
-       <!-- <th scope="row" >{{w.strength}}</th>  -->
-       <th scope="row" ><ngb-progressbar type="success" [value]="33"></ngb-progressbar></th> 
+       <th scope="row" >{{w.strength}}</th> 
+       <!-- <th scope="row" ><ngb-progressbar type="success" [value]="33"></ngb-progressbar></th>  -->
 
     </tr>
   </tbody>
