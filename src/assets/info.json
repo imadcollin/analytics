@@ -1,0 +1,603 @@
+{
+    "wordInformation": {
+        "word": "hence",
+        "frequency": 43279,
+        "documentFrequency": 37677,
+        "absoluteRank": 2610,
+        "relativeRank": 0.1044,
+        "vocabularySize": 2500000
+    },
+    "semanticallySimilarWords": [
+        {
+            "word": "emphasizing",
+            "forWord": "hence",
+            "strength": 0.2822715
+        },
+        {
+            "word": "emphasises",
+            "forWord": "hence",
+            "strength": 0.28063476
+        },
+        {
+            "word": "emphasizes",
+            "forWord": "hence",
+            "strength": 0.25205788
+        },
+        {
+            "word": "reinforces",
+            "forWord": "hence",
+            "strength": 0.25163847
+        },
+        {
+            "word": "underscores",
+            "forWord": "hence",
+            "strength": 0.24110022
+        },
+        {
+            "word": "emphasize",
+            "forWord": "hence",
+            "strength": 0.24091187
+        },
+        {
+            "word": "underlines",
+            "forWord": "hence",
+            "strength": 0.24090466
+        },
+        {
+            "word": "underlining",
+            "forWord": "hence",
+            "strength": 0.2400967
+        },
+        {
+            "word": "illustrates",
+            "forWord": "hence",
+            "strength": 0.23671761
+        },
+        {
+            "word": "and more importantly",
+            "forWord": "hence",
+            "strength": 0.23526724
+        },
+        {
+            "word": "necessitates",
+            "forWord": "hence",
+            "strength": 0.23481268
+        },
+        {
+            "word": "emphasise",
+            "forWord": "hence",
+            "strength": 0.228541
+        },
+        {
+            "word": "consequently",
+            "forWord": "hence",
+            "strength": 0.22611633
+        },
+        {
+            "word": "in other words",
+            "forWord": "hence",
+            "strength": 0.22431462
+        },
+        {
+            "word": "highlighting",
+            "forWord": "hence",
+            "strength": 0.22410919
+        },
+        {
+            "word": "reinforce",
+            "forWord": "hence",
+            "strength": 0.21944377
+        },
+        {
+            "word": "on the contrary",
+            "forWord": "hence",
+            "strength": 0.21551508
+        },
+        {
+            "word": "underline",
+            "forWord": "hence",
+            "strength": 0.21137373
+        },
+        {
+            "word": "acknowledges",
+            "forWord": "hence",
+            "strength": 0.2113405
+        },
+        {
+            "word": "avoids",
+            "forWord": "hence",
+            "strength": 0.20536679
+        },
+        {
+            "word": "underscored",
+            "forWord": "hence",
+            "strength": 0.20432769
+        },
+        {
+            "word": "especially considering",
+            "forWord": "hence",
+            "strength": 0.20188466
+        },
+        {
+            "word": "underlined",
+            "forWord": "hence",
+            "strength": 0.20083208
+        },
+        {
+            "word": "stressing",
+            "forWord": "hence",
+            "strength": 0.19994849
+        },
+        {
+            "word": "imho",
+            "forWord": "hence",
+            "strength": 0.19956031
+        },
+        {
+            "word": "validates",
+            "forWord": "hence",
+            "strength": 0.19861136
+        },
+        {
+            "word": "illustrating",
+            "forWord": "hence",
+            "strength": 0.19826484
+        },
+        {
+            "word": "acknowledging",
+            "forWord": "hence",
+            "strength": 0.19678926
+        },
+        {
+            "word": "presumably",
+            "forWord": "hence",
+            "strength": 0.19665149
+        },
+        {
+            "word": "necessitate",
+            "forWord": "hence",
+            "strength": 0.19359758
+        }
+    ],
+    "leftSideNeighbours": [
+        {
+            "word": "extortionate",
+            "forWord": "hence",
+            "strength": 0.15508652
+        },
+        {
+            "word": "flip flop",
+            "forWord": "hence",
+            "strength": 0.1479249
+        },
+        {
+            "word": "exportation",
+            "forWord": "hence",
+            "strength": 0.14011319
+        },
+        {
+            "word": "knock-off",
+            "forWord": "hence",
+            "strength": 0.13869162
+        },
+        {
+            "word": "brault",
+            "forWord": "hence",
+            "strength": 0.13616586
+        },
+        {
+            "word": "nakia",
+            "forWord": "hence",
+            "strength": 0.13445857
+        },
+        {
+            "word": "soulless",
+            "forWord": "hence",
+            "strength": 0.1337299
+        },
+        {
+            "word": "lamy",
+            "forWord": "hence",
+            "strength": 0.12941618
+        },
+        {
+            "word": "successfull",
+            "forWord": "hence",
+            "strength": 0.12828028
+        },
+        {
+            "word": "milner",
+            "forWord": "hence",
+            "strength": 0.12680142
+        }
+    ],
+    "rightSideNeighbours": [
+        {
+            "word": "tek",
+            "forWord": "hence",
+            "strength": 0.17521985
+        },
+        {
+            "word": "aristotle",
+            "forWord": "hence",
+            "strength": 0.17512967
+        },
+        {
+            "word": "true color",
+            "forWord": "hence",
+            "strength": 0.16991845
+        },
+        {
+            "word": "procrit",
+            "forWord": "hence",
+            "strength": 0.15747519
+        },
+        {
+            "word": "ritually",
+            "forWord": "hence",
+            "strength": 0.15726379
+        },
+        {
+            "word": "arrington",
+            "forWord": "hence",
+            "strength": 0.15461238
+        },
+        {
+            "word": "apprise",
+            "forWord": "hence",
+            "strength": 0.15197906
+        },
+        {
+            "word": "classic car",
+            "forWord": "hence",
+            "strength": 0.14425309
+        },
+        {
+            "word": "one-inch",
+            "forWord": "hence",
+            "strength": 0.1426899
+        },
+        {
+            "word": "the title",
+            "forWord": "hence",
+            "strength": 0.14111519
+        }
+    ],
+    "associations": [],
+    "stringSimilarWords": [
+        {
+            "word": "hene",
+            "forWord": "hence",
+            "strength": 0.0
+        },
+        {
+            "word": "thence",
+            "forWord": "hence",
+            "strength": 0.0
+        },
+        {
+            "word": "whence",
+            "forWord": "hence",
+            "strength": 0.0
+        },
+        {
+            "word": "henckel",
+            "forWord": "hence",
+            "strength": 0.0
+        },
+        {
+            "word": "ence",
+            "forWord": "hence",
+            "strength": 0.0
+        },
+        {
+            "word": "henne",
+            "forWord": "hence",
+            "strength": 0.0
+        },
+        {
+            "word": "henke",
+            "forWord": "hence",
+            "strength": 0.0
+        },
+        {
+            "word": "henle",
+            "forWord": "hence",
+            "strength": 0.0
+        },
+        {
+            "word": "henie",
+            "forWord": "hence",
+            "strength": 0.0
+        },
+        {
+            "word": "henge",
+            "forWord": "hence",
+            "strength": 0.0
+        },
+        {
+            "word": "henoc",
+            "forWord": "hence",
+            "strength": 0.0
+        },
+        {
+            "word": "henze",
+            "forWord": "hence",
+            "strength": 0.0
+        },
+        {
+            "word": "henes",
+            "forWord": "hence",
+            "strength": 0.0
+        },
+        {
+            "word": "hende",
+            "forWord": "hence",
+            "strength": 0.0
+        },
+        {
+            "word": "hec",
+            "forWord": "hence",
+            "strength": 0.0
+        },
+        {
+            "word": "heces",
+            "forWord": "hence",
+            "strength": 0.0
+        }
+    ],
+    "startsWithWords": [
+        {
+            "word": "henceforth",
+            "forWord": "hence",
+            "strength": 0.0
+        }
+    ],
+    "endsWithWords": [
+        {
+            "word": "whence",
+            "forWord": "hence",
+            "strength": 0.0
+        },
+        {
+            "word": "thence",
+            "forWord": "hence",
+            "strength": 0.0
+        }
+    ],
+    "nGrams": [
+        {
+            "word": "hence the name",
+            "forWord": "hence",
+            "strength": 0.0
+        }
+    ],
+    "semanticallySimilarWordFilaments": [
+        {
+            "labels": [
+                {
+                    "label": "shimada",
+                    "type": "RIGHT"
+                }
+            ],
+            "words": [
+                {
+                    "word": "emphasizing",
+                    "forWord": "hence",
+                    "strength": 0.2822715
+                },
+                {
+                    "word": "emphasises",
+                    "forWord": "hence",
+                    "strength": 0.28063476
+                },
+                {
+                    "word": "emphasizes",
+                    "forWord": "hence",
+                    "strength": 0.25205788
+                },
+                {
+                    "word": "reinforces",
+                    "forWord": "hence",
+                    "strength": 0.25163847
+                },
+                {
+                    "word": "underscores",
+                    "forWord": "hence",
+                    "strength": 0.24110022
+                },
+                {
+                    "word": "emphasize",
+                    "forWord": "hence",
+                    "strength": 0.24091187
+                },
+                {
+                    "word": "underlines",
+                    "forWord": "hence",
+                    "strength": 0.24090466
+                },
+                {
+                    "word": "underlining",
+                    "forWord": "hence",
+                    "strength": 0.2400967
+                },
+                {
+                    "word": "illustrates",
+                    "forWord": "hence",
+                    "strength": 0.23671761
+                },
+                {
+                    "word": "necessitates",
+                    "forWord": "hence",
+                    "strength": 0.23481268
+                },
+                {
+                    "word": "emphasise",
+                    "forWord": "hence",
+                    "strength": 0.228541
+                },
+                {
+                    "word": "highlighting",
+                    "forWord": "hence",
+                    "strength": 0.22410919
+                },
+                {
+                    "word": "reinforce",
+                    "forWord": "hence",
+                    "strength": 0.21944377
+                },
+                {
+                    "word": "underline",
+                    "forWord": "hence",
+                    "strength": 0.21137373
+                },
+                {
+                    "word": "acknowledges",
+                    "forWord": "hence",
+                    "strength": 0.2113405
+                },
+                {
+                    "word": "avoids",
+                    "forWord": "hence",
+                    "strength": 0.20536679
+                },
+                {
+                    "word": "underscored",
+                    "forWord": "hence",
+                    "strength": 0.20432769
+                },
+                {
+                    "word": "underlined",
+                    "forWord": "hence",
+                    "strength": 0.20083208
+                },
+                {
+                    "word": "stressing",
+                    "forWord": "hence",
+                    "strength": 0.19994849
+                },
+                {
+                    "word": "validates",
+                    "forWord": "hence",
+                    "strength": 0.19861136
+                },
+                {
+                    "word": "illustrating",
+                    "forWord": "hence",
+                    "strength": 0.19826484
+                },
+                {
+                    "word": "acknowledging",
+                    "forWord": "hence",
+                    "strength": 0.19678926
+                },
+                {
+                    "word": "necessitate",
+                    "forWord": "hence",
+                    "strength": 0.19359758
+                },
+                {
+                    "word": "reaffirm",
+                    "forWord": "hence",
+                    "strength": 0.1930289
+                },
+                {
+                    "word": "underscore",
+                    "forWord": "hence",
+                    "strength": 0.19237867
+                },
+                {
+                    "word": "noting",
+                    "forWord": "hence",
+                    "strength": 0.1920269
+                },
+                {
+                    "word": "recognising",
+                    "forWord": "hence",
+                    "strength": 0.1911892
+                }
+            ]
+        },
+        {
+            "labels": [
+                {
+                    "label": "secondly",
+                    "type": "LEFT"
+                }
+            ],
+            "words": [
+                {
+                    "word": "and more importantly",
+                    "forWord": "hence",
+                    "strength": 0.23526724
+                }
+            ]
+        },
+        {
+            "labels": [
+                {
+                    "label": "i'l",
+                    "type": "RIGHT"
+                }
+            ],
+            "words": [
+                {
+                    "word": "consequently",
+                    "forWord": "hence",
+                    "strength": 0.22611633
+                }
+            ]
+        },
+        {
+            "labels": [
+                {
+                    "label": "the ratio",
+                    "type": "RIGHT"
+                }
+            ],
+            "words": [
+                {
+                    "word": "in other words",
+                    "forWord": "hence",
+                    "strength": 0.22431462
+                }
+            ]
+        },
+        {
+            "labels": [
+                {
+                    "label": "thither",
+                    "type": "RIGHT"
+                }
+            ],
+            "words": [
+                {
+                    "word": "on the contrary",
+                    "forWord": "hence",
+                    "strength": 0.21551508
+                },
+                {
+                    "word": "especially considering",
+                    "forWord": "hence",
+                    "strength": 0.20188466
+                },
+                {
+                    "word": "imho",
+                    "forWord": "hence",
+                    "strength": 0.19956031
+                },
+                {
+                    "word": "presumably",
+                    "forWord": "hence",
+                    "strength": 0.19665149
+                },
+                {
+                    "word": "yes but",
+                    "forWord": "hence",
+                    "strength": 0.19191633
+                }
+            ]
+        }
+    ],
+    "topicalFilaments": []
+}

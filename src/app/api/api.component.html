@@ -1,0 +1,42 @@
+
+<div class="s01">
+    <form>
+      <fieldset>
+        <legend>Text Analysis </legend>
+      </fieldset>
+      <div class="inner-form">
+        <div class="input-field first-wrap">
+          <input type="text" (keyup)= "onkeyUp($event)" placeholder="type a word">
+        </div>
+    
+          <select name="selectedLevel"  class="input-field third-wrap" [(ngModel)]="selectedLevel" >
+              <option *ngFor="let item of l_data"  [ngValue]="item" [selected]="true">{{item}}</option>
+            </select>
+        
+        <div class="input-field third-wrap">
+          <button class="btn-search" type="button" (click)="onSubmit()" (click)="triggerScrollTo()">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  
+   <div id="destination">
+     <div>
+        <h3>Semantic Similar words</h3>
+        
+         <ul> 
+            <li *ngFor="let w of w_data"> {{w.word}} </li>
+          </ul>
+      <!-- https://www.npmjs.com/package/ngx-pagination -->
+      <!-- <ul> 
+          <li *ngFor="let w of w_data| paginate: { itemsPerPage: 10, currentPage: p }"> {{p+1}}{{w.word}} </li>
+        </ul>
+   </div>
+
+  
+               
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    -->
+
+    
