@@ -5,15 +5,15 @@ import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scrol
 @Injectable()
 export class FreeApiService {
 
-    constructor() { }
+    constructor(private _scrollToService: ScrollToService) { }
 
  
-    // public triggerScrollTo() {
+    public triggerScrollTo() {
       
-    //   const config: ScrollToConfigOptions = {
-    //     target: 'destination'
-    //   };
+      const config: ScrollToConfigOptions = {
+        target: 'destination'
+      };
    
-    //   this._scrollToService.scrollTo(config);
-    // }
+      this._scrollToService.scrollTo(config);
+    }
 }

@@ -70,7 +70,7 @@ export class ApiComponent implements OnInit {
 
 }
 triggerScrollTo(){
-  //this._scroll.triggerScrollTo();
+  this._scroll.triggerScrollTo();
 }
 
 

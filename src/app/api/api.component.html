@@ -24,19 +24,40 @@
    <div id="destination">
      <div>
         <h3>Semantic Similar words</h3>
+        <!-- https://www.npmjs.com/package/ngx-pagination -->
         
-         <ul> 
-            <li *ngFor="let w of w_data"> {{w.word}} </li>
-          </ul>
-      <!-- https://www.npmjs.com/package/ngx-pagination -->
+        
       <!-- <ul> 
-          <li *ngFor="let w of w_data| paginate: { itemsPerPage: 10, currentPage: p }"> {{p+1}}{{w.word}} </li>
-        </ul>
+          <li *ngFor="let w of w_data| paginate: { itemsPerPage: 10, currentPage: p }"> {{w.word}} </li>
+        </ul> -->
    </div>
-
-  
                
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
-    -->
+  </div>
 
-    
+
+
+    <!-- Table for showing accounts -->
+    <div class="table-responsive-lg">
+      
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Words</th>
+      <th scope="col">strength</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr  *ngFor="let w of w_data| paginate: { itemsPerPage: 10, currentPage: p } let i=index;"> 
+       <th scope="row"  >{{i+1}}</th> 
+       <th scope="row" >{{w.word}}</th> 
+       <!-- <th scope="row" >{{w.strength}}</th>  -->
+       <th scope="row" ><ngb-progressbar type="success" [value]="33"></ngb-progressbar></th> 
+
+    </tr>
+  </tbody>
+
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

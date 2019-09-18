@@ -17,8 +17,8 @@ import { FormsModule } from '@angular/forms';
 import { WordDetailsComponent } from './word-details/word-details.component';
 import { CarouseComponent } from './carouse/carouse.component';
 import { SearchComponent } from './search/search.component';
-// import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
-// import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+ import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
 
 @NgModule({
   declarations: [
@@ -31,8 +31,8 @@ import { SearchComponent } from './search/search.component';
     SearchComponent
   ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    BrowserModule,NgxPaginationModule,
+    RouterModule.forRoot(appRoutes),ScrollToModule.forRoot(),
     HttpClientModule,FormsModule
 
   ],
