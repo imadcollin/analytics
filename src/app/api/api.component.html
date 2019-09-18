@@ -1,63 +1,65 @@
-
 <div class="s01">
-    <form>
-      <fieldset>
-        <legend>Text Analysis </legend>
-      </fieldset>
-      <div class="inner-form">
-        <div class="input-field first-wrap">
-          <input type="text" (keyup)= "onkeyUp($event)" placeholder="type a word">
-        </div>
-    
-          <select name="selectedLevel"  class="input-field third-wrap" [(ngModel)]="selectedLevel" >
-              <option *ngFor="let item of l_data"  [ngValue]="item" [selected]="true">{{item}}</option>
-            </select>
-        
-        <div class="input-field third-wrap">
-          <button class="btn-search" type="button" (click)="onSubmit()" (click)="triggerScrollTo()">Search</button>
-        </div>
+  <form>
+    <fieldset>
+      <legend>Text Analysis </legend>
+    </fieldset>
+    <div class="inner-form">
+      <div class="input-field first-wrap">
+        <input type="text" (keyup)="onkeyUp($event)" placeholder="type a word">
       </div>
-    </form>
+
+      <select name="selectedLevel" class="input-field third-wrap" [(ngModel)]="selectedLevel">
+        <option *ngFor="let item of l_data" [ngValue]="item" [selected]="true">{{item}}</option>
+      </select>
+
+      <div class="input-field third-wrap">
+        <button class="btn-search" type="button" (click)="onSubmit()" (click)="triggerScrollTo()">Search</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<div id="destination">
+  <div>
+    <h3>Semantic Similar words</h3>
+    <!-- https://www.npmjs.com/package/ngx-pagination -->
+
   </div>
 
-  
-   <div id="destination">
-     <div>
-        <h3>Semantic Similar words</h3>
-        <!-- https://www.npmjs.com/package/ngx-pagination -->
-        
-        
-      <!-- <ul> 
-          <li *ngFor="let w of w_data| paginate: { itemsPerPage: 10, currentPage: p }"> {{w.word}} </li>
-        </ul> -->
-   </div>
-               
-  </div>
+</div>
 
 
 
-    <!-- Table for showing accounts -->
-    <div class="table-responsive-lg">
-      
-<table class="table">
+<!-- Table for showing accounts -->
+<div class="table-responsive-lg">
+
+  <table class="table">
     <thead class="thead-dark">
-        <tr>
-      <th scope="col">No.</th>
-      <th scope="col">Words</th>
-      <th scope="col">strength</th>
-    </tr>
-  </thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Words</th>
+        <th scope="col">strength</th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <tr  *ngFor="let w of w_data| paginate: { itemsPerPage: 10, currentPage: p } let i=index;"> 
-       <th scope="row"  >{{i+1}}</th> 
-       <th scope="row" >{{w.word}}</th> 
-       <th scope="row" >{{w.strength}}</th> 
-       <!-- <th scope="row" ><ngb-progressbar type="success" [value]="33"></ngb-progressbar></th>  -->
+    <tbody>
+      <tr *ngFor="let w of w_data| paginate: { itemsPerPage: 10, currentPage: p } let i=index;">
+        <th scope="row">{{i+1}}</th>
+        <th scope="row">{{w.word}}</th>
+        <th scope="row">
+          <progress-bar [progress]="w.strength*100" [color-degraded]="{'0': '#024BA2',  '15': 
+        '#6BEA8E', '20': '#49EC76','21': '#2AEC60',
+        '22': '#0ECFFF',
+        '23': '#0B9FC4',
+        '24': '#076A83',
+        '25': '#075366'}">
+          </progress-bar>
+        </th>
 
-    </tr>
-  </tbody>
+      </tr>
+    </tbody>
 
-</table>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
