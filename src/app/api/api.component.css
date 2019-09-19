@@ -608,4 +608,16 @@ html {
   }
 
   
-  
+  .container-fluid{
+    text-align: left;
+  }
+  .Captalize:first-letter, .list-inline-item::first-letter {
+    text-transform:capitalize;
+}
+#destination{
+  display: block;
+
+}
+.d-inline {
+  float: right;
+}
