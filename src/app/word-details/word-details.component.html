@@ -1,28 +1,81 @@
-<p>
-  word-details works!
-</p>
-<div>
+<div class="card">
+  <div class="card-header text-white bg-dark">
+    List of String Similar Words
 
-  <h3>stringSimilarWords</h3>
-  <ul>
-    <li *ngFor="let s of stringSimilarWords"> {{s.word}} </li>
-  </ul>
-
-  <h3>endsWithWords</h3>
-  <ul>
-    <li *ngFor="let s of endsWithWords"> {{s.word}} </li>
-  </ul>
-
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <div class="container-fluid">
+        <ul class="list-inline margin">
+          <li class="list-inline-item" *ngFor="let s of stringSimilarWords, let isLast=last">
+            {{s.word}}{{isLast ? '' : ', '}}</li>
+        </ul>
+      </div>
+    </blockquote>
+  </div>
 </div>
 
-<h3>Word Information</h3>
-word: {{wordInformation.absoluteRank}}
-frequency:{{wordInformation.frequency}}
-documentFrequency:{{wordInformation.documentFrequency}}
-absoluteRank:{{wordInformation.absoluteRank}}
-relativeRank:
-absoluteRank:
-documentFrequency:
-frequency:
-relativeRank:
-vocabularySize:
+
+<div class="card">
+  <div class="card-header text-white bg-dark">
+    List of End With Words
+
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <div class="container-fluid">
+        <ul class="list-inline margin">
+          <li class="list-inline-item" *ngFor="let s of endsWithWords, let isLast=last">{{s.word}}{{isLast ? '' : ', '}}
+          </li>
+        </ul>
+      </div>
+    </blockquote>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-header text-white bg-dark">
+    List of left Side Neighbors
+
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <div class="container-fluid">
+        <ul class="list-inline margin">
+          <li class="list-inline-item" *ngFor="let s of leftSideNeighbours, let isLast=last">
+            {{s.word}}{{isLast ? '' : ', '}}</li>
+        </ul>
+      </div>
+    </blockquote>
+  </div>
+</div>
+
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card-header text-white bg-dark">
+      Rank
+    </div>
+    <div class="card">
+
+      <div class="card-body">
+        <p class="card-text">Absolute Rank: {{wordInformation.absoluteRank}}</p>
+        <p class="card-text">Relative Rank: {{wordInformation.relativeRank}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card-header text-white bg-dark">
+      Frequency
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">Frequency: {{wordInformation.frequency}}</p>
+        <p class="card-text">Document Frequency: {{wordInformation.documentFrequency}}</p>
+      </div>
+    </div>
+  </div>
+</div>

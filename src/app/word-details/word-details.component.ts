@@ -12,6 +12,7 @@ export class WordDetailsComponent implements OnInit {
   endsWithWords;
   stringSimilarWords;
   wordInformation;
+  leftSideNeighbours;
   constructor() { }
 
   ngOnInit() {
@@ -22,6 +23,7 @@ export class WordDetailsComponent implements OnInit {
     this.stringSimilarWords = this.details.stringSimilarWords;
     this.endsWithWords = this.details.endsWithWords;
     this.wordInformation = this.details.wordInformation;
+    this.leftSideNeighbours = this.details.leftSideNeighbours;
   }
 
 }
