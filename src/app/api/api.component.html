@@ -15,7 +15,7 @@
       </select>
 
       <div class="input-field third-wrap">
-        <button class="btn-search" type="button" (click)="onSubmit()" (click)="triggerScrollTo()">Search</button>
+        <button class="btn-search" type="button" (click)="onSubmit()" (click)="toggle()" (click)="triggerScrollTo()">Search</button>
       </div>
     </div>
   </form>
@@ -27,27 +27,33 @@
     <div class="container">
       <h2 class="display-4">Semantically Similar Words</h2>
       <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-    </div>
-    <div id="test" class="d-inline" (click)="toggle()" id="bt">
-      <!-- Show {{change}}:  <input  type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"> -->
-      <input type="checkbox" checked data-toggle="toggle" data-on="Show List" data-off="Show Table"
-        data-onstyle="success" data-offstyle="danger">
+   
+      <div id="test" (click)="toggle()" class="" id="bt">
+          <input type="checkbox"  checked data-toggle="toggle" data-on="List Infofor" data-off="Table "
+          data-onstyle="success" data-offstyle="danger">
+        </div>
+        
     </div>
   </div>
 </div>
+        
+
 <!-- <h3>Color Definitions</h3> -->
 <!-- https://www.npmjs.com/package/ngx-pagination -->
-<ng-container *ngIf="hide">
+
+<ng-container *ngIf="show">
 
 <app-progress-bar></app-progress-bar>
 
   <br>
  
+ 
+
   <!-- Table for showing Words -->
   <div class="table-responsive-sm">
 
     <table class="table table-borderless table-hover table-sm">
-      <thead class="thead-dark">
+      <thead class="thead-dark  ">
         <tr>
           <th scope="col" style="width: 20.66%">Word</th>
           <th scope="col"style="width: 50.66%">Similar Words</th>
@@ -75,13 +81,12 @@
   </div>
 </ng-container>
 
-<br><br>
 
   <!-- Words in List -->
-<ng-container *ngIf="show">
+<ng-container *ngIf="hide">
   <div class="card">
     <div class="card-header text-white bg-dark">
-      List of Semantically Similar Words
+     Semantically Similar Words
 
     </div>
     <div class="card-body">
@@ -96,11 +101,12 @@
   </div>
 
 </ng-container>
-
-
-<button type="button" (click)="toggle2()"  class="btn btn-success btn-lg">More Details</button>
-<div *ngIf="details">
-
-  <app-word-details></app-word-details>
+<br>
+<div id="test" class="" (click)="toggle2()" id="bt">
+  <input type="checkbox"  checked data-toggle="toggle" data-on="More Info" data-off="Less Info"
+  data-onstyle="success" data-offstyle="danger">
 </div>
 
+<br>
+
+<app-word-details *ngIf="details"></app-word-details>
