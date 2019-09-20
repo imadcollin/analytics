@@ -17,6 +17,8 @@ export class ApiComponent implements OnInit {
   w_data = [];
   public show: boolean = false;
   public hide: boolean = true;
+  public details: boolean = false;
+  public hide2: boolean = true;
   public change = "Table";
   public count = 0;
   public buttonName: any = 'Show';
@@ -150,5 +152,10 @@ export class ApiComponent implements OnInit {
       this.buttonName = "Hide";
     else
       this.buttonName = "Show";
+  }
+  toggle2() {
+  
+    this.details = !this.details;
+  
   }
 }

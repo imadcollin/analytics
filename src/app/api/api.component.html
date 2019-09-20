@@ -97,3 +97,10 @@
 
 </ng-container>
 
+
+<button type="button" (click)="toggle2()"  class="btn btn-success btn-lg">More Details</button>
+<div *ngIf="details">
+
+  <app-word-details></app-word-details>
+</div>
+

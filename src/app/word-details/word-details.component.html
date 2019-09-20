@@ -1,4 +1,4 @@
-<div class="card">
+<!-- <div class="card">
   <div class="card-header text-white bg-dark">
     List of String Similar Words
 
@@ -13,10 +13,10 @@
       </div>
     </blockquote>
   </div>
-</div>
+</div> -->
 
 
-<div class="card">
+<!-- <div class="card">
   <div class="card-header text-white bg-dark">
     List of End With Words
 
@@ -31,9 +31,9 @@
       </div>
     </blockquote>
   </div>
-</div>
+</div> -->
 
-
+<!-- 
 <div class="card">
   <div class="card-header text-white bg-dark">
     List of left Side Neighbors
@@ -49,32 +49,97 @@
       </div>
     </blockquote>
   </div>
-</div>
+</div> -->
 
 
+<!-- ************************************* -->
 
-
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card-header text-white bg-dark">
-      Rank
+<div id="accordion">
+  <div class="card">
+    <div class="card-header text-white bg-dark" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn text-white" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+          aria-controls="collapseOne">
+          List of String Similar Words
+        </button>
+      </h5>
     </div>
-    <div class="card">
 
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body">
-        <p class="card-text">Absolute Rank: {{wordInformation.absoluteRank}}</p>
-        <p class="card-text">Relative Rank: {{wordInformation.relativeRank}}</p>
+        <blockquote class="blockquote mb-0">
+          <div class="container-fluid">
+            <ul class="list-inline margin">
+              <li class="list-inline-item" *ngFor="let s of stringSimilarWords, let isLast=last">
+                {{s.word}}{{isLast ? '' : ', '}}</li>
+            </ul>
+          </div>
+        </blockquote>
       </div>
     </div>
   </div>
-  <div class="col-sm-6">
-    <div class="card-header text-white bg-dark">
-      Frequency
+
+  <div class="card">
+    <div class="card-header text-white bg-dark" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn text-white collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+          aria-controls="collapseTwo">
+          List of End With Words
+        </button>
+      </h5>
     </div>
-    <div class="card">
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
       <div class="card-body">
-        <p class="card-text">Frequency: {{wordInformation.frequency}}</p>
-        <p class="card-text">Document Frequency: {{wordInformation.documentFrequency}}</p>
+        <blockquote class="blockquote mb-0">
+          <div class="container-fluid">
+            <ul class="list-inline margin">
+              <li class="list-inline-item" *ngFor="let s of endsWithWords, let isLast=last">
+                {{s.word}}{{isLast ? '' : ', '}}
+              </li>
+            </ul>
+          </div>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="card">
+    <div class="card-header text-white bg-dark" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn text-white collapsed" data-toggle="collapse" data-target="#collapseThree"
+          aria-expanded="false" aria-controls="collapseThree">
+          Word Information
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card-header text-white bg-info">
+            Rank
+          </div>
+          <div class="card">
+
+            <div class="card-body">
+              <p class="card-text">Absolute Rank: {{wordInformation.absoluteRank}}</p>
+              <p class="card-text">Relative Rank: {{wordInformation.relativeRank}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card-header text-white bg-info">
+            Frequency
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">Frequency: {{wordInformation.frequency}}</p>
+              <p class="card-text">Document Frequency: {{wordInformation.documentFrequency}}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
