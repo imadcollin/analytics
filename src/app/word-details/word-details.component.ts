@@ -16,6 +16,11 @@ export class WordDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+// Retrieve data from local storage
+if (localStorage.getItem("key") === null) {
+  alert ('Sorry Something went wrong');
+}
+else{
 
     this.storage = localStorage.getItem("key");
     console.log('retrievedObject: ', JSON.parse(this.storage));
@@ -25,5 +30,6 @@ export class WordDetailsComponent implements OnInit {
     this.wordInformation = this.details.wordInformation;
     this.leftSideNeighbours = this.details.leftSideNeighbours;
   }
+}
 
 }
