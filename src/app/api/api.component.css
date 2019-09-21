@@ -470,7 +470,7 @@ html {
   
   .s01 form {
     width: 100%;
-    max-width: 1290px;
+    /* max-width: 1290px; */
   }
   
   .s01 form legend {
