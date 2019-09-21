@@ -23,16 +23,12 @@
 <div class="content">
   <!-- Scroll down Distention -->
 <div id="destination">
-  <div class="jumbotron jumbotron-fluid">
+  <div class="jumbotron jumbotron-fluid text-left" >
     <div class="container">
       <h2 class="display-4">Semantically Similar Words</h2>
       <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
    
-      <div id="test" (click)="toggle()" class="" id="bt">
-          <!-- <input type="checkbox"  checked data-toggle="toggle" data-on="List Infofor" data-off="Table "
-          data-onstyle="success" data-offstyle="danger"> -->
-          <button type="button" class="btn btn-primary btn-lg">{{list_or_table}}</button>
-        </div>
+     
 
     </div>
   </div>
@@ -51,14 +47,21 @@
  
 
   <!-- Table for showing Words -->
-  <div class="table-responsive-xlg">
+  <div class="table-responsive-sm">
 
     <table class="table table-borderless table-hover table-sm">
       <thead class="thead-dark  ">
         <tr>
           <th scope="col" style="width: 20.66%">Word</th>
           <th scope="col"style="width: 50.66%">Similar Words</th>
-          <th scope="col" style="width: 30.66%">Word Strength</th>
+          <th scope="col" style="width: 15.66%">Word Strength</th>
+                <th scope="col" style="width: 10.66%">
+                   <div id="test" (click)="toggle()" class="" id="bt">
+                    <!-- <input type="checkbox"  checked data-toggle="toggle" data-on="List Infofor" data-off="Table "
+                    data-onstyle="success" data-offstyle="danger"> -->
+                    <button type="button" class="btn btn-primary btn-lg pull-center">{{list_or_table}}</button>
+                  </div>
+                </th>
         </tr>
       </thead>
 
@@ -87,8 +90,17 @@
 <ng-container *ngIf="hide" id="myHeader" >
   <div class="card" class="content">
     <div class="card-header text-white bg-dark">
-     Semantically Similar Words
+     
+     
 
+    <div id="test" (click)="toggle()" class="" id="bt">
+        <!-- <input type="checkbox"  checked data-toggle="toggle" data-on="List Infofor" data-off="Table "
+        data-onstyle="success" data-offstyle="danger"> -->
+        <h1 class="card-header text-white bg-dark">
+          
+            Semantically Similar Words 
+  </h1> <button type="button" class="btn btn-primary btn-lg pull-right">{{list_or_table}}</button>
+      </div>
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
@@ -106,7 +118,7 @@
 <div id="test" class="" (click)="toggle2()" id="bt">
   <!-- <input type="checkbox"  checked data-toggle="toggle" data-on="More Info" data-off="Less Info"
   data-onstyle="success" data-offstyle="danger"> -->
-  <button type="button" class="btn btn-primary">{{more_details}}</button>
+  <button type="button" class="btn btn-primary pull-center">{{more_details}}</button>
 </div>
 
 
