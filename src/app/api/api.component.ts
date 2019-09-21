@@ -23,8 +23,12 @@ export class ApiComponent implements OnInit {
   public count = 0;
   public buttonName: any = 'Show';
   p: number = 1;
+  public list_or_table = "List/Table";
+  public more_details = "More Details";
 
   ngOnInit() {
+    window.addEventListener('scroll', this.scroll, true); //third parameter
+
     console.log(this.w_data);
     console.log('----ä');
     this.text();
@@ -49,13 +53,26 @@ export class ApiComponent implements OnInit {
     // });
 
   }
-
+  ngOnDestroy() {
+    window.removeEventListener('scroll', this.scroll, true);
+  }
   input: string = '';
   onkeyUp(event: any) {
     this.input = event.target.value;
   }
   /*******************  Call words with params **************** */
+  scroll = (): void => {
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
 
+    if (window.pageYOffset > sticky) {
+      console.log("stick")
+      header.classList.add("sticky");
+    } else {
+      console.log("rem")
+      header.classList.remove("sticky");
+    }
+  };
   onSubmit($event) {
 
     // this._apiService.getWordsParam(this.selectedLevel,this.input).then((response) => {
@@ -148,14 +165,18 @@ export class ApiComponent implements OnInit {
     (this.count % 2 == 0) ? this.change = "List" : this.change = "Table";
     this.count++;
     // CHANGE THE NAME OF THE BUTTON.
-    if (this.show)
+    if (this.show) {
       this.buttonName = "Hide";
-    else
+      this.list_or_table = "Show List";
+    } else {
       this.buttonName = "Show";
+      this.list_or_table = "Show Table";
+    }
   }
   toggle2() {
-  
+
     this.details = !this.details;
-  
+    this.details ? this.more_details = "Less Info" : this.more_details = "More Info";
+
   }
 }

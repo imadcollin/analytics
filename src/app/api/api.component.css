@@ -465,7 +465,7 @@ html {
     background: url("../../assets/images/5.png");
     background-size: cover;
     background-position: center center;
-    padding: 15px;
+    /* padding: 15px; */
   }
   
   .s01 form {
@@ -601,6 +601,7 @@ html {
     }
     .s01 form .inner-form .input-field.third-wrap {
       width: calc(50% - 10px);
+      background-color: #fff;
     }
     .s01 form .inner-form .input-field.third-wrap .btn-search {
       font-size: 16px;
@@ -620,4 +621,31 @@ html {
 }
 .d-inline {
   float: right;
+}
+
+
+.top-container {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
 }
