@@ -20,7 +20,8 @@ import { SearchComponent } from './search/search.component';
  import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
  import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
  import {ProgressBarModule} from "angular-progress-bar";
-import { ProgressBarComponent } from './progress-bar/progress-bar.component'
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { PriceCardsComponent } from './price-cards/price-cards.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component'
     WordDetailsComponent,
     CarouseComponent,
     SearchComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    PriceCardsComponent
   ],
   imports: [
     BrowserModule,NgxPaginationModule,ProgressBarModule,
