@@ -1,11 +1,13 @@
+<!---------------------------------- Text and search------------------------------->
+
 <div class="s01">
-  <form >
+  <form>
     <fieldset>
       <legend>Text Analysis is
         <span class="txt-rotate" data-period="2000" data-rotate='[ "easy.", "simple.", "pretty.", "fun!" ]'></span>
       </legend>
     </fieldset>
-    <div class="inner-form" id="myHeader" >
+    <div class="inner-form" id="myHeader">
       <div class="input-field first-wrap">
         <input type="text" (keyup)="onkeyUp($event)" placeholder="type a word">
       </div>
@@ -15,135 +17,120 @@
       </select>
 
       <div class="input-field second-wrap">
-        <button class="btn-search" id="search" type="button" (click)="onSubmit()" (click)="toggle3()" (click)="triggerScrollTo()">Search</button>
+        <button class="btn-search" id="search" type="button" (click)="onSubmit()" (click)="toggle3()"
+          (click)="triggerScrollTo()">Search</button>
       </div>
     </div>
   </form>
 </div>
+<!---------------------------------- end text and search------------------------------->
+
 <div class="content">
 
-  
   <!-- Scroll down Distention -->
-<div id="destination">
-   <div class="jumbotron jumbotron-fluid text-left" >
+  <div id="destination">
+
     <div class="container">
-      <h2 class="display-4">Semantically Similar Words</h2>
-      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+      <div class="page-header justify-content-left  text-left">
+        <h1>Gavagai's Text Analysis </h1>
+      </div>
+      <p class="text-left">This is another text.</p>
+
     </div>
-  </div>
-</div>
-        
 
-<!-- <h3>Color Definitions</h3> -->
-<!-- https://www.npmjs.com/package/ngx-pagination -->
+    <!-- https://www.npmjs.com/package/ngx-pagination -->
 
-<ng-container *ngIf="show">
-  <app-progress-bar></app-progress-bar>
-</ng-container>
+    <!---------------------------------- Progress bar------------------------------->
+    <ng-container *ngIf="show">
+      <app-progress-bar></app-progress-bar>
+    </ng-container>
+    <!---------------------------------- Progress bar------------------------------->
 
 
+    <label class="switch" [ngStyle]="{'visibility':isMiddleDivVisible?'visible':'hidden'}">
+      <input type="checkbox" checked (click)="toggle()">
+      <span class="slider round"></span>
+    </label>
 
+    <ng-container *ngIf="show">
 
-<label class="switch" [ngStyle]="{'visibility':isMiddleDivVisible?'visible':'hidden'}">
-   <input type="checkbox" checked (click)="toggle()" >
-  <span class="slider round"></span>
-</label>
+      <!-- Table for showing Words -->
+      <div class="table-responsive-sm">
 
-<ng-container *ngIf="show">
+        <table class="table table-borderless table-hover table-sm">
+          <thead class="thead-dark  ">
+            <tr>
+              <th scope="col" style="width: 20.66%">Word</th>
+              <th scope="col" style="width: 50.66%">Similar Words</th>
+              <th scope="col" style="width: 15.66%">Word Strength</th>
+            </tr>
+          </thead>
 
-  <!-- Table for showing Words -->
-  <div class="table-responsive-sm">
+          <tbody>
+            <tr *ngFor=" let w of w_data| paginate: { itemsPerPage: 5, currentPage: p }  let i = index">
+              <th scope="row">{{i+1}}</th>
+              <th scope="row" class="Captalize">{{w.word}}</th>
 
-    <table class="table table-borderless table-hover table-sm">
-      <thead class="thead-dark  ">
-        <tr>
-          <th scope="col" style="width: 20.66%">Word</th>
-          <th scope="col"style="width: 50.66%">Similar Words</th>
-          <th scope="col" style="width: 15.66%">Word Strength</th>
-                <!-- <th scope="col" style="width: 10.66%">
-                
-                  List/Table
-                  <label class="switch" [ngStyle]="{'visibility':isMiddleDivVisible?'visible':'hidden'}">
-                      <input type="checkbox" checked (click)="toggle()" >
-                      <span class="slider round"></span>
-                    </label>
-                </th> -->
-                
-
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr *ngFor=" let w of w_data| paginate: { itemsPerPage: 5, currentPage: p }  let i = index">
-          <th scope="row">{{i+1}}</th>
-          <th scope="row" class="Captalize">{{w.word}}</th>
-
-         <!-- Progress Bard -->
-          <progress-bar [progress]="w.strength*100" [color-degraded]="{'0': '#f0ad4e', '19': '#5bc0de', '20': '#5bc0de',
+              <!-- Progress Bard -->
+              <progress-bar [progress]="w.strength*100" [color-degraded]="{'0': '#f0ad4e', '19': '#5bc0de', '20': '#5bc0de',
         '22': '#f0ad4e',
         '23': '#f0ad4e',
         '24': '#5cb85c',
         '25': '#0275d8'}">
-          </progress-bar>
+              </progress-bar>
 
-        </tr>
-      </tbody>
-    </table>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
-  </div>
-</ng-container>
-
-
-  <!-- Words in List -->
-<ng-container  *ngIf="hide" id="myHeader" >
-
-  <div class="card" class="content" [ngStyle]="{'visibility':isMiddleDivVisible?'visible':'hidden'}">
-    <div class="card-header text-white bg-dark">
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </ng-container>
 
 
-    <div id="test" (click)="toggle()" class="" id="bt"  >
-      
-        <h1 class="card-header text-white bg-dark">
-          
-            Semantically Similar Words 
-            
-          </h1> 
-              <!-- <label class="switch" [ngStyle]="{'visibility':isMiddleDivVisible?'visible':'hidden'}">
-                  <input type="checkbox" checked (click)="toggle()" >
-                  <span class="slider round"></span>
-                </label> -->
-  <!-- <button type="button" class="btn btn-primary btn-lg pull-right">{{list_or_table}}</button> -->
-   
+    <!---------------------------------- Words in List ------------------------------->
 
-</div>
-    </div>
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <div class="container-fluid">
-          <ul class="list-inline margin">
-            <li class="list-inline-item" *ngFor="let w of w_data, let isLast=last">{{w.word}}{{isLast ? '' : ', '}}</li>
-          </ul>
+    <ng-container *ngIf="hide" id="myHeader">
+
+      <div class="card" class="content" [ngStyle]="{'visibility':isMiddleDivVisible?'visible':'hidden'}">
+        <div class="card-header text-white bg-dark">
+
+
+          <div id="test" (click)="toggle()" class="" id="bt">
+
+            <h1 class="card-header text-white bg-dark">
+
+              Semantically Similar Words
+
+            </h1>
+
+          </div>
         </div>
-      </blockquote>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <div class="container-fluid">
+              <ul class="list-inline margin">
+                <li class="list-inline-item" *ngFor="let w of w_data, let isLast=last">
+                  <strong>{{w.word}}{{isLast ? '' : ', '}}</strong> </li>
+              </ul>
+            </div>
+          </blockquote>
+        </div>
+      </div>
+
+    </ng-container>
+    <br>
+    <div id="test" class="" (click)="toggle2()" id="bt">
+      <button type="button" id="bt_info" class="btn btn-primary pull-center"
+        [ngStyle]="{'visibility':isMiddleDivVisible?'visible':'hidden'}">{{more_details}}</button>
     </div>
+
+
+
+    <!---------------------------------- Component ------------------------------->
+    <app-word-details *ngIf="details"></app-word-details>
   </div>
 
-</ng-container>
-<br>
-<div id="test" class="" (click)="toggle2()" id="bt">
-  <!-- <label class="switch">
-    <input type="checkbox" checked>
-    <span class="slider"></span>
-  </label><br><br>
-  <h2 style="color: red;">testtesttestest</h2> -->
-  <!-- <input type="checkbox"  checked data-toggle="toggle" data-on="More Info" data-off="Less Info"
-  data-onstyle="success" data-offstyle="danger"> -->
-  <button type="button" id="bt_info" class="btn btn-primary pull-center" [ngStyle]="{'visibility':isMiddleDivVisible?'visible':'hidden'}">{{more_details}}</button>
-</div>
-
-
-
-<app-word-details *ngIf="details"></app-word-details>
-</div>
-<app-price-cards></app-price-cards>
-<app-features></app-features>
+  <!---------------------------------- Component ------------------------------->
+  <app-price-cards></app-price-cards>
+  <!---------------------------------- Component ------------------------------->
+  <app-features></app-features>

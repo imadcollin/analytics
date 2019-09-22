@@ -291,6 +291,8 @@ html {
    */
   fieldset {
     padding: 0.35em 0.75em 0.625em;
+    border: none;
+
   }
   
   /**
@@ -311,7 +313,14 @@ html {
     padding: 0;
     /* 3 */
     white-space: normal;
+    border: none;
+
     /* 1 */
+  }
+  .txt-rotate{
+    font-size: 30px;
+    font-style: italic;
+    color: aquamarine;
   }
   
   /**
@@ -438,7 +447,7 @@ html {
     -webkit-padding-start: 0;
     -webkit-padding-end: 0;
     -webkit-padding-after: 0;
-    border: 0;
+    border: none;
   }
   
   legend {
