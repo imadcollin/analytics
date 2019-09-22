@@ -10,7 +10,7 @@ body {
 }
 
 #generic_price_table {
-  background-color: #f0eded;
+  /* background-color: #f0eded; */
 }
 
 /*PRICE COLOR CODE START*/
@@ -444,4 +444,8 @@ body {
   background-color: #666;
   color: #FFF;
   text-decoration: none;
+}
+
+.fas{
+float:right;
 }
