@@ -25,6 +25,9 @@ export class ApiComponent implements OnInit {
   p: number = 1;
   public list_or_table = "List/Table";
   public more_details = "More Details";
+  isMiddleDivVisible: boolean = false;
+  stop = true;
+
 
   ngOnInit() {
     window.addEventListener('scroll', this.scroll, true); //third parameter
@@ -73,6 +76,8 @@ export class ApiComponent implements OnInit {
       header.classList.remove("sticky");
     }
   };
+
+
   onSubmit($event) {
 
     // this._apiService.getWordsParam(this.selectedLevel,this.input).then((response) => {
@@ -100,6 +105,42 @@ export class ApiComponent implements OnInit {
   triggerScrollTo() {
     this._scroll.triggerScrollTo();
   }
+
+
+  toggle() {
+    this.show = !this.show;
+    this.hide = !this.show;
+    this.isMiddleDivVisible = true;
+    console.log(this.isMiddleDivVisible);
+    (this.count % 2 == 0) ? this.change = "List" : this.change = "Table";
+    this.count++;
+    // CHANGE THE NAME OF THE BUTTON.
+    if (this.show) {
+      this.buttonName = "Hide";
+      this.list_or_table = "Show List";
+    } else {
+      this.buttonName = "Show";
+      this.list_or_table = "Show Table";
+    }
+  }
+
+  toggle2() {
+    /**Bind more info buttom on click event */
+    this.details = !this.details;
+    this.details ? this.more_details = "Less Info" : this.more_details = "More Info";
+
+  }
+
+  toggle3() {
+    if (this.stop) {
+      /**call toggle just once onSubmit */
+      this.stop = false;
+      this.toggle();
+    }
+  }
+
+
+
   text() {
     var TxtRotate = function (el, toRotate, period) {
       this.toRotate = toRotate;
@@ -159,24 +200,5 @@ export class ApiComponent implements OnInit {
     };
   }
 
-  toggle() {
-    this.show = !this.show;
-    this.hide = !this.show;
-    (this.count % 2 == 0) ? this.change = "List" : this.change = "Table";
-    this.count++;
-    // CHANGE THE NAME OF THE BUTTON.
-    if (this.show) {
-      this.buttonName = "Hide";
-      this.list_or_table = "Show List";
-    } else {
-      this.buttonName = "Show";
-      this.list_or_table = "Show Table";
-    }
-  }
-  toggle2() {
 
-    this.details = !this.details;
-    this.details ? this.more_details = "Less Info" : this.more_details = "More Info";
-
-  }
 }

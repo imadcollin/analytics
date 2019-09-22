@@ -14,22 +14,21 @@
         <option *ngFor="let item of l_data" [ngValue]="item" [selected]="true">{{item}}</option>
       </select>
 
-      <div class="input-field third-wrap">
-        <button class="btn-search" type="button" (click)="onSubmit()" (click)="toggle()" (click)="triggerScrollTo()">Search</button>
+      <div class="input-field second-wrap">
+        <button class="btn-search" id="search" type="button" (click)="onSubmit()" (click)="toggle3()" (click)="triggerScrollTo()">Search</button>
       </div>
     </div>
   </form>
 </div>
 <div class="content">
+
+  
   <!-- Scroll down Distention -->
 <div id="destination">
-  <div class="jumbotron jumbotron-fluid text-left" >
+   <div class="jumbotron jumbotron-fluid text-left" >
     <div class="container">
       <h2 class="display-4">Semantically Similar Words</h2>
       <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-   
-     
-
     </div>
   </div>
 </div>
@@ -39,12 +38,18 @@
 <!-- https://www.npmjs.com/package/ngx-pagination -->
 
 <ng-container *ngIf="show">
+  <app-progress-bar></app-progress-bar>
+</ng-container>
 
-<app-progress-bar></app-progress-bar>
 
-  <br>
- 
- 
+
+
+<label class="switch" [ngStyle]="{'visibility':isMiddleDivVisible?'visible':'hidden'}">
+   <input type="checkbox" checked (click)="toggle()" >
+  <span class="slider round"></span>
+</label>
+
+<ng-container *ngIf="show">
 
   <!-- Table for showing Words -->
   <div class="table-responsive-sm">
@@ -55,18 +60,21 @@
           <th scope="col" style="width: 20.66%">Word</th>
           <th scope="col"style="width: 50.66%">Similar Words</th>
           <th scope="col" style="width: 15.66%">Word Strength</th>
-                <th scope="col" style="width: 10.66%">
-                   <div id="test" (click)="toggle()" class="" id="bt">
-                    <!-- <input type="checkbox"  checked data-toggle="toggle" data-on="List Infofor" data-off="Table "
-                    data-onstyle="success" data-offstyle="danger"> -->
-                    <button type="button" class="btn btn-primary btn-lg pull-center">{{list_or_table}}</button>
-                  </div>
-                </th>
+                <!-- <th scope="col" style="width: 10.66%">
+                
+                  List/Table
+                  <label class="switch" [ngStyle]="{'visibility':isMiddleDivVisible?'visible':'hidden'}">
+                      <input type="checkbox" checked (click)="toggle()" >
+                      <span class="slider round"></span>
+                    </label>
+                </th> -->
+                
+
         </tr>
       </thead>
 
       <tbody>
-        <tr *ngFor=" let w of w_data| paginate: { itemsPerPage: 6, currentPage: p }  let i = index">
+        <tr *ngFor=" let w of w_data| paginate: { itemsPerPage: 5, currentPage: p }  let i = index">
           <th scope="row">{{i+1}}</th>
           <th scope="row" class="Captalize">{{w.word}}</th>
 
@@ -87,20 +95,27 @@
 
 
   <!-- Words in List -->
-<ng-container *ngIf="hide" id="myHeader" >
-  <div class="card" class="content">
-    <div class="card-header text-white bg-dark">
-     
-     
+<ng-container  *ngIf="hide" id="myHeader" >
 
-    <div id="test" (click)="toggle()" class="" id="bt">
-        <!-- <input type="checkbox"  checked data-toggle="toggle" data-on="List Infofor" data-off="Table "
-        data-onstyle="success" data-offstyle="danger"> -->
+  <div class="card" class="content" [ngStyle]="{'visibility':isMiddleDivVisible?'visible':'hidden'}">
+    <div class="card-header text-white bg-dark">
+
+
+    <div id="test" (click)="toggle()" class="" id="bt"  >
+      
         <h1 class="card-header text-white bg-dark">
           
             Semantically Similar Words 
-  </h1> <button type="button" class="btn btn-primary btn-lg pull-right">{{list_or_table}}</button>
-      </div>
+            
+          </h1> 
+              <!-- <label class="switch" [ngStyle]="{'visibility':isMiddleDivVisible?'visible':'hidden'}">
+                  <input type="checkbox" checked (click)="toggle()" >
+                  <span class="slider round"></span>
+                </label> -->
+  <!-- <button type="button" class="btn btn-primary btn-lg pull-right">{{list_or_table}}</button> -->
+   
+
+</div>
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
@@ -118,12 +133,9 @@
 <div id="test" class="" (click)="toggle2()" id="bt">
   <!-- <input type="checkbox"  checked data-toggle="toggle" data-on="More Info" data-off="Less Info"
   data-onstyle="success" data-offstyle="danger"> -->
-  <button type="button" class="btn btn-primary pull-center">{{more_details}}</button>
+  <button type="button" id="bt_info" class="btn btn-primary pull-center" [ngStyle]="{'visibility':isMiddleDivVisible?'visible':'hidden'}">{{more_details}}</button>
 </div>
 
-
-
-<br>
 
 <app-word-details *ngIf="details"></app-word-details>
 </div>
