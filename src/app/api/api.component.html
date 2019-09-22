@@ -131,10 +131,16 @@
 </ng-container>
 <br>
 <div id="test" class="" (click)="toggle2()" id="bt">
+  <!-- <label class="switch">
+    <input type="checkbox" checked>
+    <span class="slider"></span>
+  </label><br><br>
+  <h2 style="color: red;">testtesttestest</h2> -->
   <!-- <input type="checkbox"  checked data-toggle="toggle" data-on="More Info" data-off="Less Info"
   data-onstyle="success" data-offstyle="danger"> -->
   <button type="button" id="bt_info" class="btn btn-primary pull-center" [ngStyle]="{'visibility':isMiddleDivVisible?'visible':'hidden'}">{{more_details}}</button>
 </div>
+
 
 
 <app-word-details *ngIf="details"></app-word-details>

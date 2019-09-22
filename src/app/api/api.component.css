@@ -689,6 +689,8 @@ html {
   background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
+  z-index: -1;
+
 }
 
 .slider:before {
@@ -701,6 +703,8 @@ html {
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
+  /* z-index: -1; */
+
 }
 
 input:checked + .slider {
