@@ -743,3 +743,27 @@ input:checked + .slider:before {
 #bt_info{
   width: 100%;
 }
+.title_b{
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+.title_t{
+  border: none;
+  outline: 0;
+  /* display: inline-block; */
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}

@@ -4,6 +4,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ApiComponent } from './api/api.component';
 import { WordDetailsComponent } from './word-details/word-details.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SearchComponent } from './search/search.component';
 
 export const appRoutes: Routes = [
         {
@@ -11,8 +12,8 @@ export const appRoutes: Routes = [
       component: ApiComponent
     } ,
         {
-      path: 'footer',
-      component: FooterComponent
+      path: 'About',
+      component: SearchComponent
     } ,
         {
       path: 'Api',
