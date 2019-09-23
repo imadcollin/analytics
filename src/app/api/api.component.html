@@ -17,8 +17,7 @@
       </select>
 
       <div class="input-field second-wrap">
-        <button  class="btn-search" id="search" type="button" (click)="onSubmit(§event)" (click)="toggle3()"
-          (click)="triggerScrollTo()">Search</button>
+        <button  class="btn-search" id="search" type="button" (click)="onSubmit($event); toggle3(); triggerScrollTo()">Search</button>
       </div>
     </div>
   </form>
