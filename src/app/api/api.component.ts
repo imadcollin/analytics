@@ -17,24 +17,24 @@ export class ApiComponent implements OnInit {
   w_data = [];
   public show: boolean = false;
   public hide: boolean = true;
-  public details: boolean = false;
+  public stop: boolean = true;
   public hide2: boolean = true;
-  public change = "Table";
+  public details: boolean = false;
+  isMiddleDivVisible: boolean = false;
+
   public count = 0;
-  public buttonName: any = 'Show';
   p: number = 1;
+
+  public buttonName: any = 'Show';
+  public change = "Table";
   public list_or_table = "List/Table";
   public more_details = "More Details";
-  isMiddleDivVisible: boolean = false;
-  stop = true;
-
+  input: string = '';
 
   ngOnInit() {
     window.addEventListener('scroll', this.scroll, true); //third parameter
-
-    console.log(this.w_data);
-    console.log('----ä');
     this.text();
+    
     /*******************  Call Languages **************** */
     this._apiService.getLangJson().then((response) => {
       response.json().then((data) => {
@@ -59,7 +59,7 @@ export class ApiComponent implements OnInit {
   ngOnDestroy() {
     window.removeEventListener('scroll', this.scroll, true);
   }
-  input: string = '';
+
   onkeyUp(event: any) {
     this.input = event.target.value;
   }
@@ -75,31 +75,18 @@ export class ApiComponent implements OnInit {
       console.log("rem")
       header.classList.remove("sticky");
     }
-  };
-
-
+  }
   onSubmit($event) {
 
-    // this._apiService.getWordsParam(this.selectedLevel,this.input).then((response) => {
-    //   response.json().then((data) => {
-    //     console.log(data.semanticallySimilarWords);
-    //     this.w_data = data.semanticallySimilarWords;
-    //   })
-    // }).catch((err) => {
-    //   console.log(err);
-    // });
-
-
-    this._apiService.getInfoJson().then((response) => {
+    this._apiService.getWordsParam(this.selectedLevel,this.input).then((response) => {
       response.json().then((data) => {
-        console.log(data);
+        console.log(data.semanticallySimilarWords);
         this.w_data = data.semanticallySimilarWords;
-        localStorage.setItem('key', JSON.stringify(data));
-      })
+            localStorage.setItem('key', JSON.stringify(data));
+      });
     }).catch((err) => {
       console.log(err);
     });
-
 
   }
   triggerScrollTo() {
@@ -111,7 +98,6 @@ export class ApiComponent implements OnInit {
     this.show = !this.show;
     this.hide = !this.show;
     this.isMiddleDivVisible = true;
-    console.log(this.isMiddleDivVisible);
     (this.count % 2 == 0) ? this.change = "List" : this.change = "Table";
     this.count++;
     // CHANGE THE NAME OF THE BUTTON.
@@ -131,16 +117,16 @@ export class ApiComponent implements OnInit {
 
   }
 
+  /**call toggle just once onSubmit */
   toggle3() {
     if (this.stop) {
-      /**call toggle just once onSubmit */
       this.stop = false;
       this.toggle();
     }
   }
 
 
-
+/**----------------------------------Animated text-------------------------------- */
   text() {
     var TxtRotate = function (el, toRotate, period) {
       this.toRotate = toRotate;

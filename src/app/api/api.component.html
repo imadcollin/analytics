@@ -9,15 +9,15 @@
     </fieldset>
     <div class="inner-form" id="myHeader">
       <div class="input-field first-wrap">
-        <input type="text" (keyup)="onkeyUp($event)" placeholder="type a word">
+        <input name="inpu" type="text" [(ngModel)]='listFilter' (keyup)="onkeyUp($event)" placeholder="type a word"  >
       </div>
 
       <select name="selectedLevel" class="input-field third-wrap" [(ngModel)]="selectedLevel">
-        <option *ngFor="let item of l_data" [ngValue]="item" [selected]="true">{{item}}</option>
+        <option *ngFor="let item of l_data" [ngValue]="item" [selected]="false">{{item}}</option>
       </select>
 
       <div class="input-field second-wrap">
-        <button class="btn-search" id="search" type="button" (click)="onSubmit()" (click)="toggle3()"
+        <button [disabled]="!listFilter||!selectedLevel"  class="btn-search" id="search" type="button" (click)="onSubmit()" (click)="toggle3()"
           (click)="triggerScrollTo()">Search</button>
       </div>
     </div>
@@ -60,9 +60,10 @@
         <table class="table table-borderless table-hover table-sm">
           <thead class="thead-dark  ">
             <tr>
-              <th scope="col" style="width: 20.66%">Word</th>
-              <th scope="col" style="width: 50.66%">Similar Words</th>
-              <th scope="col" style="width: 15.66%">Word Strength</th>
+              <th scope="col" style="width: 20.66%">No</th>
+              <th scope="col" style="width: 30.66%">Words</th>
+              <th scope="col" style="width: 15.66%">Forword</th>
+              <th scope="col" style="width: 35.66%">Word Strength</th>
             </tr>
           </thead>
 
@@ -70,6 +71,7 @@
             <tr *ngFor=" let w of w_data| paginate: { itemsPerPage: 5, currentPage: p }  let i = index">
               <th scope="row">{{i+1}}</th>
               <th scope="row" class="Captalize">{{w.word}}</th>
+              <th scope="row" class="Captalize">{{w.forWord}}</th>
 
               <!-- Progress Bard -->
               <progress-bar [progress]="w.strength*100" [color-degraded]="{'0': '#f0ad4e', '19': '#5bc0de', '20': '#5bc0de',
