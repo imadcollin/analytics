@@ -6,11 +6,11 @@ export class ApiService {
   /*******************  Read JSON **************** */
   private url = "https://jsonplaceholder.typicode.com/posts";
   language = './assets/lang.json';
-  wordJson='./assets/words.json';
-  infoJson='./assets/info.json';
- 
+  wordJson = './assets/words.json';
+  infoJson = './assets/info.json';
 
-  /*******************  Read Languages **************** */
+
+  /*******************  Auth API **************** */
   _auth = {
     langUrl: 'https://api.gavagai.se/v3\\',
     route: "languages?",
@@ -18,10 +18,10 @@ export class ApiService {
   };
 
 
-  /*******************  Read words  **************** */
-lang="en";
-word="yes";
-_word = `https://api.gavagai.se/v3/lexicon/${this.lang}/${this.word}?additionalFields=SEMANTICALLY_SIMILAR_WORDS&apiKey=${this._auth.apiKey}`;
+  /*******************  Mock words  **************** */
+  lang = "en";
+  word = "yes";
+  _word = `https://api.gavagai.se/v3/lexicon/${this.lang}/${this.word}?additionalFields=SEMANTICALLY_SIMILAR_WORDS&apiKey=${this._auth.apiKey}`;
 
 
   constructor() { }
@@ -32,21 +32,16 @@ _word = `https://api.gavagai.se/v3/lexicon/${this.lang}/${this.word}?additionalF
   getLag() {
     return fetch(`${this._auth.langUrl}${this._auth.route}apiKey=${this._auth.apiKey}`);
   }
-  getWord(){
+  getWord() {
     return fetch(this._word);
 
   }
-  getWordsParam(l, w){
-    l="en";
-    w="rest";
-    console.log("language is EN ");
-    console.log("word  is rest ");
-    return fetch(this.wordJson);
+  getWordsParam(l, w) {
     //working API 
-    //return fetch(`https://api.gavagai.se/v3/lexicon/${l}/${w}?additionalFields=SEMANTICALLY_SIMILAR_WORDS&apiKey=${this._auth.apiKey}`);
+    return fetch(`https://api.gavagai.se/v3/lexicon/${l}/${w}?additionalFields=SEMANTICALLY_SIMILAR_WORDS&apiKey=${this._auth.apiKey}`);
 
   }
-  getInfoJson(){
+  getInfoJson() {
     return fetch(this.infoJson);
   }
 
