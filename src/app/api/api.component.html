@@ -9,15 +9,15 @@
     </fieldset>
     <div class="inner-form" id="myHeader">
       <div class="input-field first-wrap">
-        <input name="inpu" type="text" [(ngModel)]='listFilter' (keyup)="onkeyUp($event)" placeholder="type a word"  >
+        <input name="inpu" type="text"  (keyup)="onkeyUp($event)" placeholder="type a word"  >
       </div>
 
-      <select name="selectedLevel" class="input-field third-wrap" [(ngModel)]="selectedLevel">
+      <select name="selectedLevel" class="input-field third-wrap" >
         <option *ngFor="let item of l_data" [ngValue]="item" [selected]="false">{{item}}</option>
       </select>
 
       <div class="input-field second-wrap">
-        <button [disabled]="!listFilter||!selectedLevel"  class="btn-search" id="search" type="button" (click)="onSubmit()" (click)="toggle3()"
+        <button  class="btn-search" id="search" type="button" (click)="onSubmit()" (click)="toggle3()"
           (click)="triggerScrollTo()">Search</button>
       </div>
     </div>
