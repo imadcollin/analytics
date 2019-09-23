@@ -30,7 +30,7 @@ export class ApiComponent implements OnInit {
   public list_or_table = "List/Table";
   public more_details = "More Details";
   input: string = '';
-
+  public listFilter='';
   ngOnInit() {
     window.addEventListener('scroll', this.scroll, true); //third parameter
     this.text();
