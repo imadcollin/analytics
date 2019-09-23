@@ -9,15 +9,16 @@
     </fieldset>
     <div class="inner-form" id="myHeader">
       <div class="input-field first-wrap">
-        <input name="inpu" type="text"  (keyup)="onkeyUp($event)" placeholder="type a word"  >
+        <input name="inpu" type="text" [(ngModel)]='listFilter' (keyup)="onkeyUp($event)" placeholder="type a word"  >
       </div>
 
-      <select name="selectedLevel" class="input-field third-wrap" >
+      <select name="selectedLevel" class="input-field third-wrap" [(ngModel)]="selectedLevel">
         <option *ngFor="let item of l_data" [ngValue]="item" [selected]="false">{{item}}</option>
       </select>
 
       <div class="input-field second-wrap">
-        <button  class="btn-search" id="search" type="button" (click)="onSubmit($event); toggle3(); triggerScrollTo()">Search</button>
+        <button [disabled]="!listFilter||!selectedLevel"  class="btn-search" id="search" type="button" (click)="onSubmit()" (click)="toggle3()"
+          (click)="triggerScrollTo()">Search</button>
       </div>
     </div>
   </form>
@@ -57,7 +58,7 @@
       <div class="table-responsive-sm">
 
         <table class="table table-borderless table-hover table-sm">
-          <thead class="   title_t">
+          <thead class="thead-dark  ">
             <tr>
               <th scope="col" style="width: 20.66%">No</th>
               <th scope="col" style="width: 30.66%">Words</th>
@@ -121,7 +122,7 @@
     </ng-container>
     <br>
     <div id="test" class="" (click)="toggle2()" id="bt">
-      <button type="button" id="bt_info" class="btn  pull-center"  class="title_b"
+      <button type="button" id="bt_info" class="btn btn-primary pull-center"
         [ngStyle]="{'visibility':isMiddleDivVisible?'visible':'hidden'}">{{more_details}}</button>
     </div>
 
